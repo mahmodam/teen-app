@@ -38,4 +38,22 @@ baseUrl = 'https://localhost:5001/api/';
     localStorage.removeItem('user');
     this.currentUserSource$.next(null);
   }
+
+  register(model : any){
+    // מקבלים משתמש מהשרת
+    return this.http.post<User>(this.baseUrl + 'account/register', model)
+    // מה שעושים עם המשתמש שהגיע מהשרת
+    .pipe(
+      map((user:User) =>{
+      if(user){
+        // מכניסים אותו ל localStorage
+        localStorage.setItem('user', JSON.stringify(user));
+        // מכנסים אותו ל currentUser
+        this.currentUserSource$.next(user);
+      }
+      return user;
+    })
+    )
+  }
+
 }

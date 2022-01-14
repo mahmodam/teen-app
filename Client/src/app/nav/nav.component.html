@@ -4,7 +4,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div  class="collapse navbar-collapse" id="navbarCollapse">
-      <ul *ngIf="loggedIn" class="navbar-nav mr-auto">
+      <ul *ngIf="currentUser$ | async" class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">Matches</a>
         </li>
@@ -20,7 +20,7 @@
           </li>
       </ul>
 
-      <div class="btn-group" dropdown>
+      <div class="btn-group" *ngIf="currentUser$ |async" dropdown>
         <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                 aria-controls="dropdown-animated">
           Wellcome User <span class="caret"></span>
@@ -34,7 +34,7 @@
         </ul>
       </div>
 
-      <form *ngIf="!loggedIn" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
+      <form *ngIf="!(currentUser$ |async)" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
         <input name="username" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text" placeholder="UserName">
         <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password" placeholder="Password">
 
