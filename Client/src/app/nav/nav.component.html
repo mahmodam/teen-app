@@ -1,29 +1,41 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Teen App</a>
+<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-primary">
+    <a class="navbar-brand" routerLinkActive="active" routerLink="/">Teen App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div  class="collapse navbar-collapse" id="navbarCollapse">
-      <ul *ngIf="currentUser$ | async" class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Matches</a>
+      <ul  class="navbar-nav mr-auto">
+        <ng-container *ngIf="currentUser$ | async">
+        <li class="nav-item ">
+          <a class="nav-link" routerLinkActive="active" routerLink="/members">Matches</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lists</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Messages</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/messages">Messages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/questions">Questions</a>
+        </li>
+      </ng-container>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/videos">Videos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/meetings">Meetings</a>
         </li>
 
-        <li class="nav-item">
-            <a  class="nav-link disabled" (click)="logout()">Logout</a>
+        <li class="nav-item pointer">
+            <a class="nav-link" (click)="logout()">Logout</a>
           </li>
       </ul>
 
       <div class="btn-group" *ngIf="currentUser$ |async" dropdown>
-        <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+        <button  id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                 aria-controls="dropdown-animated">
-          Wellcome User <span class="caret"></span>
+           <span class="caret" ></span>
+           wellcome User
         </button>
         <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
             role="menu" >
