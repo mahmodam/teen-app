@@ -41,10 +41,10 @@ export class NavComponent implements OnInit {
       this.router.navigateByUrl('/members');
       console.log(response);
       // this.loggedIn = true;
-    }, error => {
-      this.toastr.error(error.error)
-      console.log('Failed to login', error);
-    });
+    // }, error => {
+    //   this.toastr.error(error.error)
+    //   console.log('Failed to login', error);
+     });
   }
 
   // getCurrentUser(){
