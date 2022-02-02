@@ -18,12 +18,12 @@ namespace API.Services
 
         public TokenService(IConfiguration config)
         {
-                       _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
-
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
         }
-        string ITokenService.CreateToken(AppUser user)
+
+        public string CreateToken(AppUser user)
         {
-            var claims = new List<Claim>
+             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
             };
@@ -45,5 +45,6 @@ namespace API.Services
 
             return tokenHandler.WriteToken(token);
         }
+       
     }
 }
