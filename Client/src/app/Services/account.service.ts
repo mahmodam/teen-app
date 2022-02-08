@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, ReplaySubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from '../models/User';
 
 // אפשר לבצע לו inject
@@ -9,7 +10,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class AccountService {
-baseUrl = 'https://localhost:5001/api/';
+baseUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   private currentUserSource$ = new ReplaySubject<User | null>(1);

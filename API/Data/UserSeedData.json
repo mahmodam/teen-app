@@ -203,7 +203,7 @@
         "Country": "Western Sahara",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/36.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/36.jpg",
             "IsMain": true
           }
         ]
@@ -222,7 +222,7 @@
         "Country": "Niue",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/61.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/61.jpg",
             "IsMain": true
           }
         ]
@@ -241,7 +241,7 @@
         "Country": "Belgium",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/27.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/27.jpg",
             "IsMain": true
           }
         ]
@@ -260,7 +260,7 @@
         "Country": "Panama",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/7.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/7.jpg",
             "IsMain": true
           }
         ]
@@ -279,7 +279,7 @@
         "Country": "Nicaragua",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/30.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/30.jpg",
             "IsMain": true
           }
         ]
@@ -298,7 +298,7 @@
         "Country": "Iraq",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/56.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/56.jpg",
             "IsMain": true
           }
         ]
@@ -317,7 +317,7 @@
         "Country": "Chad",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/61.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/61.jpg",
             "IsMain": true
           }
         ]
@@ -336,7 +336,7 @@
         "Country": "Guadeloupe",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/13.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/13.jpg",
             "IsMain": true
           }
         ]
@@ -355,7 +355,7 @@
         "Country": "British Indian Ocean Territory",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/64.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/64.jpg",
             "IsMain": true
           }
         ]
@@ -374,7 +374,7 @@
         "Country": "Bosnia and Herzegovina",
         "Photos": [
           {
-            "Url": "https://randomuser.me/api/portraits/women/63.jpg",
+            "Url": "https://randomuser.me/api/portraits/men/63.jpg",
             "IsMain": true
           }
         ]

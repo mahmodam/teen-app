@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 import { Observable } from 'rxjs';
+import { Member } from '../models/member';
 import { User } from '../models/User';
 import { AccountService } from '../Services/account.service';
 
@@ -13,6 +14,8 @@ import { AccountService } from '../Services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+
+  member!:Member;
 
   model: any = {};
   // loggedIn: boolean = false;
@@ -40,6 +43,7 @@ export class NavComponent implements OnInit {
     .subscribe(response => {
       this.router.navigateByUrl('/members');
       console.log(response);
+      this.toastr.success('Hello')
       // this.loggedIn = true;
     // }, error => {
     //   this.toastr.error(error.error)
