@@ -30,13 +30,13 @@
     </ul>
 
 
-    <div class="btn-group" *ngIf="currentUser$ |async" dropdown>
+    <div class="btn-group" *ngIf="currentUser$ |async as user" dropdown>
       <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-animated">
         <span class="caret"></span>
-        Welcome User
+        Welcome {{user.username | titlecase}}
       </button>
       <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu">
-        <li role="menuitem"><a class="dropdown-item" >Edit Profile</a></li>
+        <li role="menuitem"><a class="dropdown-item" routerLink="/member/edit" >Edit Profile</a></li>
         <li role="menuitem"><a class="dropdown-item"  (click)="logout()">Logout</a>
         </li>
 
