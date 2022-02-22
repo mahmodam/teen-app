@@ -33,6 +33,7 @@
     <div class="btn-group" *ngIf="currentUser$ |async as user" dropdown>
       <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-animated">
         <span class="caret"></span>
+        <img src="{{user.photoUrl}}" alt="{{user.username}}" style="width:50px">
         Welcome {{user.username | titlecase}}
       </button>
       <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu">
