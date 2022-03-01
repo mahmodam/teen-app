@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
   registerMode = false;
   users:any;
   constructor(private http: HttpClient) { }
@@ -31,5 +32,7 @@ export class HomeComponent implements OnInit {
   cancelRegisterMode($event: boolean){
     this.registerMode = $event;
   }
+ 
+
 
 }

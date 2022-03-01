@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -26,6 +26,8 @@ import { SharedModule } from './modules/shared.module';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './member-edit/photo-editor/photo-editor.component';
+import { TextInputComponent } from './forms/text-input/text-input.component';
+import { DateInputComponent } from './forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { PhotoEditorComponent } from './member-edit/photo-editor/photo-editor.co
     ServerErrorComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    TextInputComponent,
+    DateInputComponent,
     
   ],
   imports: [
@@ -51,6 +55,7 @@ import { PhotoEditorComponent } from './member-edit/photo-editor/photo-editor.co
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     CoreModule
   ],
