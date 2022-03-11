@@ -1,3 +1,4 @@
+
 <!-- אם משתמש קיים -->
 <div class="row" *ngIf="member">
     <div class="col-4">
@@ -12,7 +13,7 @@
         </div>
     </div>
     <div class="col-4">
-        <div class="card"><img class="card-img img-thumbnail" src="{{member.photoUrl || './assets/user.png'}}"
+        <div class="card ml-3 mb-3"><img class="card-img img-thumbnail" src="{{member.photoUrl || './assets/user.png'}}"
                 alt="{{member.knownAs}}">
             <div class="card-body">
                 <div>
@@ -25,11 +26,11 @@
                 </div>
                 <div>
                     <strong>Last Active:</strong>
-                    <p>{{member.lastActive}}</p>
+                    <p>{{member.lastActive | timeago}}</p>
                 </div>
                 <div>
                     <strong>Member Sinse:</strong>
-                    <p>{{member.created}}</p>
+                    <p>{{member.created | date: 'dd MMMM yyyy'}}</p>
                 </div>
                 <div class="card-footer">
                     <button form="editForm" [disabled]="editForm.pristine" class="btn btn-outline-success btn-block" type="submit">Save Changes</button>
@@ -41,7 +42,7 @@
     <div class="col-8">
         <tabset class="member-tabset">
             <tab heading="About {{member.knownAs}}">
-                <form id="editForm" #editForm="ngForm" (ngSubmit)="updateMember()">
+                <form class="ml-3" id="editForm" #editForm="ngForm" (ngSubmit)="updateMember()">
                 <h4 class="mt-3">Description</h4>
                 <textarea [(ngModel)]="member.introduction" name="introduction" class="form-control" rows="6"></textarea>
                 <h4 class="mt-4">LookingFor</h4>
@@ -64,4 +65,5 @@
         </tabset>
     </div>
 </div>
+
 

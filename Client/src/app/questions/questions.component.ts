@@ -26,7 +26,7 @@ export class QuestionsComponent implements OnInit {
 
   cancel(){
    
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/members');
   }
 
   question(){

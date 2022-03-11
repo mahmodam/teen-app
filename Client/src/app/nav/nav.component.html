@@ -36,7 +36,7 @@
     <div class="dropdown" *ngIf="currentUser$ | async as user"dropdown>
       <img class="img" src="{{user.photoUrl || './assets/user.png'}}" alt="{{user.username}}">
       <a class="dropdown-toggle text-light" dropdownToggle >
-        Wellcome {{user.username | titlecase}}
+        Wellcome {{user.knownAs | titlecase}}
       </a>
     
       <ul class="dropdown-menu mt-3" *dropdownMenu >
