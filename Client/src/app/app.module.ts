@@ -13,15 +13,12 @@ import { RegisterComponent } from './register/register.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { VideosComponent } from './videos/videos.component';
-import { MeetingsComponent } from './meetings/meetings.component';
 import { CoreModule } from './modules/core.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
-import { MemberCardComponent } from './members/member-card/member-card.component';
 import { SharedModule } from './modules/shared.module';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
@@ -38,16 +35,13 @@ import { DateInputComponent } from './forms/date-input/date-input.component';
     ListsComponent,
     MessagesComponent,
     QuestionsComponent,
-    VideosComponent,
-    MeetingsComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
     MemberEditComponent,
     PhotoEditorComponent,
     TextInputComponent,
-    DateInputComponent,
-    
+    DateInputComponent, 
   ],
   imports: [
     SharedModule,

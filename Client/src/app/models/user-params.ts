@@ -1,3 +1,4 @@
+import { Member } from "./member";
 import { User } from "./User";
 
 export class UserParams {
@@ -7,6 +8,7 @@ export class UserParams {
     pageSize = 5;
     gender: 'male' | 'female';
     orderBy = 'lastActive';
+   
 
     /**
      *

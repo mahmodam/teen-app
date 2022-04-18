@@ -3,10 +3,11 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { Member } from '../models/member';
 import { User } from '../models/User';
 import { AccountService } from '../Services/account.service';
+import { MemberService } from '../Services/member.service';
 
 @Component({
   selector: 'app-nav',
@@ -19,9 +20,12 @@ export class NavComponent implements OnInit {
   model: any = {};
   currentUser$: Observable<User | null>;
 
+  public searchUser: string;
+
   constructor(private accountService: AccountService,
     private router : Router,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private memberService: MemberService) {
     this.currentUser$ = accountService.currentUser$;
    }
 
@@ -45,6 +49,18 @@ export class NavComponent implements OnInit {
      });
   }
 
-  
+  SearchMember(form:NgForm){
+    this.memberService.getMember(this.searchUser).subscribe(response => {
+     
+      if(this.searchUser == null){
+        this.toastr.error('Please enter a username');
+      }
+      
+      this.member = response;
+      this.router.navigateByUrl('/members/' + this.searchUser.toLowerCase());
+      form.reset();
+    
+    });
+  }
 
 }

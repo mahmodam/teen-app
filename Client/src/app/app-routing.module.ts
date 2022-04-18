@@ -7,13 +7,9 @@ import { AuthGuard } from './guards/auth-guard.service';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
-import { MeetingsComponent } from './meetings/meetings.component';
 import { MemberEditComponent } from './member-edit/member-edit.component';
-import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { VideosComponent } from './videos/videos.component';
 
 const routes: Routes = [
   {
@@ -33,8 +29,6 @@ const routes: Routes = [
       {path:'lists',component:ListsComponent},
       {path:'messages',component: MessagesComponent},
       {path:'questions',component: QuestionsComponent},
-      {path:'videos',component:VideosComponent},
-      {path:'meetings',component:MeetingsComponent}
     ]
   },
   {path:'errors', component:TestErrorsComponent},

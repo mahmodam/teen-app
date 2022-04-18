@@ -39,3 +39,25 @@ bottom: 0px;
 .fa-user-circle{
     color: blueviolet;
 }
+
+.card{
+    border: 3px solid blueviolet;
+    border-radius: 10px;
+}
+
+.is-online{
+    animation: fa-blink 1.5s linear infinite;
+    color: darkgreen;
+}
+
+@keyframes fa-blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
