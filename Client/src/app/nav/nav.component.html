@@ -1,18 +1,15 @@
 <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-primary">
   <div class="container">
-  <a class="navbar-brand" routerLink="/">Dating App</a>
-  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
-  <!-- <div class="collapse navbar-collapse" id="navbarCollapse"> -->
+  <a class="navbar-brand" routerLink="/">Teen App</a>
+
     <ul class="navbar-nav mr-auto">
       <ng-container *ngIf="currentUser$ | async" >
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/members">Matches</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/messages" >Messages</a>
       </li>
@@ -20,16 +17,22 @@
         <a class="nav-link" routerLinkActive="active" routerLink="/questions">Questions</a>
       </li>
       </ng-container>
-      <li class="nav-item">
+      
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/videos">Videos</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/meetings">Meetings</a>
-      </li>
+      </li> -->
 
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/errors">Errors</a> 
       </li>
+
+       <form *ngIf="(currentUser$ | async)" #searchForm="ngForm" class="form-inline my-2 my-lg-0 ml-5" (ngSubmit)="SearchMember(searchForm)" >
+        <input name="username" [(ngModel)]="searchUser" class="form-control mr-sm-2 search" type="search" placeholder="Search Member" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  ><i class="fa fa-search"></i> Search</button>
+      </form>
       
     </ul>
 

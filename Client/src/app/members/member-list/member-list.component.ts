@@ -15,6 +15,7 @@ import { MemberService } from 'src/app/Services/member.service';
 export class MemberListComponent implements OnInit {
 
   members: Member[];
+  member: Member;
   pagination: Pagination;
   userParams: UserParams;
   user: User;
@@ -50,4 +51,9 @@ export class MemberListComponent implements OnInit {
     this.userParams= new UserParams(this.user);
     this.loadMembers();
   }
+  
+ 
+  
+
+  
 }

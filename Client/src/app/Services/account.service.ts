@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/User';
+import { PresenceService } from './presence.service';
 
 // אפשר לבצע לו inject
 // שאפשר לגשת אליו מכל מקום ב root
@@ -11,7 +12,7 @@ import { User } from '../models/User';
 })
 export class AccountService {
 baseUrl = environment.apiUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private presence: PresenceService) { }
 
   private currentUserSource$ = new ReplaySubject<User | null>(1);
   currentUser$ = this.currentUserSource$.asObservable();
@@ -24,6 +25,7 @@ baseUrl = environment.apiUrl;
         if(user){
           localStorage.setItem('user', JSON.stringify(user));
           this.currentUserSource$.next(user);
+          this.presence.startConnection(user);
         }
       })
     );
@@ -38,6 +40,7 @@ baseUrl = environment.apiUrl;
   logout(){
     localStorage.removeItem('user');
     this.currentUserSource$.next(null);
+    this.presence.stopConnection();
   }
 
   register(model : any){
@@ -51,6 +54,7 @@ baseUrl = environment.apiUrl;
         localStorage.setItem('user', JSON.stringify(user));
         // מכנסים אותו ל currentUser
         this.currentUserSource$.next(user);
+        this.presence.startConnection(user);
       }
       return user;
     })
