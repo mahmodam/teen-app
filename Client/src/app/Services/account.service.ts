@@ -41,6 +41,7 @@ baseUrl = environment.apiUrl;
     localStorage.removeItem('user');
     this.currentUserSource$.next(null);
     this.presence.stopConnection();
+    
   }
 
   register(model : any){

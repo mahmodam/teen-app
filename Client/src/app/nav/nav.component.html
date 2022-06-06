@@ -11,7 +11,8 @@
         <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a>
       </li> -->
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/messages" >Messages</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/messages" >Messages <span class="badge badge-pill badge-danger " ngDefaultControl name="badge" [hidden]="badge == 0" [ngModel]="badge" >{{badge}}</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/questions">Questions</a>
@@ -31,7 +32,7 @@
 
        <form *ngIf="(currentUser$ | async)" #searchForm="ngForm" class="form-inline my-2 my-lg-0 ml-5" (ngSubmit)="SearchMember(searchForm)" >
         <input name="username" [(ngModel)]="searchUser" class="form-control mr-sm-2 search" type="search" placeholder="Search Member" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  ><i class="fa fa-search"></i> Search</button>
+        <button class="btn  my-2 my-sm-0" type="submit"  ><i class="fa fa-search"></i> Search</button>
       </form>
       
     </ul>
@@ -53,7 +54,7 @@
        <!-- name יהיה ה property של ה ngForm -->
       <input name="username" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text" placeholder="UserName">
       <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password" placeholder="Password">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+      <button class="btn  my-2 my-sm-0" type="submit">Login</button>
     </form>
   </div>
   <!-- </div> -->

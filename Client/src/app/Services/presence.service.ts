@@ -46,6 +46,7 @@ export class PresenceService {
   }
 
   public stopConnection(): void {
+    this.onlineUsersSource$.next([]);
     this.hubConnection.stop()
     .catch(err => console.log(err));
   }

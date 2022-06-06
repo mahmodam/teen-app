@@ -56,6 +56,7 @@ namespace API.Data
 
                 var messages = query.ProjectTo<MessageDto>(_mapper.ConfigurationProvider);
 
+
                 return await PageList<MessageDto>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
@@ -82,6 +83,15 @@ namespace API.Data
 
             return _mapper.Map<IEnumerable<MessageDto>>(messages);
             
+        }
+
+        public async Task<int> GetUnreadMessagesCount(string username)
+        {
+            var messages = await _context.Messages
+                .Where(m => m.Recipient.UserName == username && m.DateRead == null && !m.RecipientDeleted)
+                .ToListAsync();
+
+            return messages.Count();
         }
 
         public async Task<bool> SaveAllAsync()

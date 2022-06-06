@@ -2,7 +2,7 @@
     <h2 class="text-center text-primary mt-4">Sign Up</h2>
     <br>
 
-<div class="card bg-light mb-3" style="max-width: 25rem;">
+<div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
     <div class="container">
        <div class="form-group">
             <label class="form-lable mr-3">I am a:</label>
@@ -14,14 +14,14 @@
             </label>
        </div>
     
-      <app-text-input formControlName="username" label="Username"></app-text-input>
+       <i class="fa fa-user"></i><app-text-input formControlName="username" label="Username"></app-text-input>
       <!-- component אחר של ה date -->
-      <app-date-input formControlName="dateOfBirth" label="dateOfBirth" [maxDate]="maxDate"></app-date-input>
-      <app-text-input formControlName="knownAs" label="knownAs"></app-text-input>
-      <app-text-input formControlName="city" label="city"></app-text-input>
-      <app-text-input formControlName="country" label="country"></app-text-input>
-      <app-text-input formControlName="password" label="Password" type="password"></app-text-input>
-      <app-text-input formControlName="confirmPassword" label="Confirm Password"  type="password"></app-text-input>
+      <i class="fa fa-calendar"></i><app-date-input formControlName="dateOfBirth" label="dateOfBirth" [maxDate]="maxDate"></app-date-input>
+      <i class="fa fa-user"></i><app-text-input formControlName="knownAs" label="knownAs"></app-text-input>
+      <i class="fa fa-building"></i><app-text-input formControlName="city" label="city"></app-text-input>
+      <i class="fa fa-flag"></i><app-text-input formControlName="country" label="country"></app-text-input>
+      <i class="fa fa-lock"></i><app-text-input formControlName="password" label="Password" type="password"></app-text-input>
+      <i class="fa fa-lock"></i><app-text-input formControlName="confirmPassword" label="Confirm Password"  type="password"></app-text-input>
       <br>
 
       <div class="row mt-5" *ngIf="validationErrors.length">

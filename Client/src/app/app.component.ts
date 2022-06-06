@@ -10,7 +10,7 @@ import { PresenceService } from './Services/presence.service';
 })
 export class AppComponent implements OnInit {
   
-  title = 'Client';
+  title = 'TeenApp';
   users: any;
 
   constructor(private http: HttpClient, private accountSeervice: AccountService, private presence: PresenceService){

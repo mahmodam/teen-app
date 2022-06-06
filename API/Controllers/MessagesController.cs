@@ -109,5 +109,12 @@ namespace API.Controllers
 
             return BadRequest("Failed to delete message");
         }
+
+        [HttpGet("count")]
+        public async Task<ActionResult<int>> GetUnreadMessagesCount(){
+            var username = User.GetUsername();
+            var count = await _messageRepository.GetUnreadMessagesCount(username);
+            return Ok(count);
+        }
     }
 }

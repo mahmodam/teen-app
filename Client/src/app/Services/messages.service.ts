@@ -36,4 +36,8 @@ export class MessagesService {
     return this.http.delete(`${this.baseUrl}messages/${id}`);
   }
 
+  getUnreadMessagesCount(){
+    return this.http.get<number>(`${this.baseUrl}messages/count`);
+  }
+
 }

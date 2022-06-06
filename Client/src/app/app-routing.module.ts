@@ -6,6 +6,7 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
 import { AuthGuard } from './guards/auth-guard.service';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 import { HomeComponent } from './home/home.component';
+import { LearnMoreComponent } from './home/learn-more/learn-more.component';
 import { ListsComponent } from './lists/lists.component';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'errors', component:TestErrorsComponent},
   {path:'not-found', component: NotFoundComponent},
   {path:'server-error', component:ServerErrorComponent},
+  {path:'LearnMore', component:LearnMoreComponent},
   {
     path:'**',
     pathMatch:'full',
