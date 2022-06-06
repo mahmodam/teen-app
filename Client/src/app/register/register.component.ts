@@ -17,7 +17,6 @@ export class RegisterComponent implements OnInit {
   maxDate: Date;
   validationErrors: string[] = [];
 
-  // מאפשר להכניס מידע מ HomeComponent
   @Input() usersFromHomeComponent: any;
   @Output() cancelRegister = new EventEmitter<boolean>();
 
