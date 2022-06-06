@@ -7,9 +7,7 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/members">Matches</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a>
-      </li> -->
+    
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/messages" >Messages <span class="badge badge-pill badge-danger " ngDefaultControl name="badge" [hidden]="badge == 0" [ngModel]="badge" >{{badge}}</span>
         </a>
@@ -19,12 +17,6 @@
       </li>
       </ng-container>
       
-      <!-- <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/videos">Videos</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/meetings">Meetings</a>
-      </li> -->
 
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/errors">Errors</a> 
@@ -50,8 +42,6 @@
       </ul>
     </div>
     <form *ngIf="!(currentUser$ | async)" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
-       <!-- ngModel זה tow way biding שינוי במודיל יגרום לשינוי בשדה ולהפך -->
-       <!-- name יהיה ה property של ה ngForm -->
       <input name="username" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text" placeholder="UserName">
       <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password" placeholder="Password">
       <button class="btn  my-2 my-sm-0" type="submit">Login</button>

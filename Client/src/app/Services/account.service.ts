@@ -5,8 +5,7 @@ import { environment } from 'src/environments/environment';
 import { User } from '../models/User';
 import { PresenceService } from './presence.service';
 
-// אפשר לבצע לו inject
-// שאפשר לגשת אליו מכל מקום ב root
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,15 +44,11 @@ baseUrl = environment.apiUrl;
   }
 
   register(model : any){
-    // מקבלים משתמש מהשרת
     return this.http.post<User>(this.baseUrl + 'account/register', model)
-    // מה שעושים עם המשתמש שהגיע מהשרת
     .pipe(
       map((user:User) =>{
       if(user){
-        // מכניסים אותו ל localStorage
         localStorage.setItem('user', JSON.stringify(user));
-        // מכנסים אותו ל currentUser
         this.currentUserSource$.next(user);
         this.presence.startConnection(user);
       }
