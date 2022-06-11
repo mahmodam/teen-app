@@ -35,11 +35,9 @@ namespace API
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // הסדר לא חשוב
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
-            // מעבירים מ Extensions
            services.AddApplicationServices(_config);
 
             services.AddControllers();
@@ -50,21 +48,18 @@ namespace API
 
             services.AddCors();
 
-            // מעבירים מ Extensions
             services.AddIdentityServices(_config);
 
            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        // הסדר חשוב
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseMiddleware<ExceptionMiddleware>();
             
             if (env.IsDevelopment())
             {
-                //app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }

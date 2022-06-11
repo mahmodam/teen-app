@@ -1,5 +1,4 @@
 
-<!-- אם משתמש קיים -->
 <div class="row" *ngIf="member">
     <div class="col-4">
         <h1 class="text-center mt-3" id="h1">{{member.knownAs | titlecase}} Profile</h1>
@@ -38,7 +37,6 @@
             </div>
         </div>
     </div>
-    <!-- tabset הוספה מ ngx bootstrap -->
     <div class="col-8">
         <tabset class="member-tabset">
             <tab heading="About {{member.knownAs}}">
