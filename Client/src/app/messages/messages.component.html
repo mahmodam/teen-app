@@ -1,6 +1,5 @@
 <div class="container">
 <div class="row mb-4">
-    <!-- name="container" קשורים ל btnRadio -->
     <div class="btn-group mt-4" name="container">
         <button class="btn btn-primary" btnRadio="Unread" [(ngModel)]="container" (click)="loadMessages()"> <i class="fa fa-envelope"> Unread</i> </button>
         <button class="btn btn-primary"btnRadio="Inbox" [(ngModel)]="container" (click)="loadMessages()">   <i class="fa fa-envelope-open"></i> Inbox</button>
@@ -20,7 +19,6 @@
             </tr>
             </thead>
             <tbody class="body">
-                <!-- אם אני ב Outbox אז הולך ל recipientUsername  -->
                 <tr [hidden]="loading" *ngFor="let message of messages" [queryParams]="{tab:3}" [routerLink]="'/members/' + (container === 'Outbox' ? message.recipientUsername : message.senderUsername)">
                     <td>{{message.content}}</td>
                     <td>
@@ -38,7 +36,7 @@
                     </td>
 
                     <td>{{message.messageSent | timeago}}</td>
-                    <button class="btn btn-danger mt-3" (click)="$event.stopPropagation()" (click)="deleteMessage(message.id)">Delete</button>
+                    <button class="btn btn-danger mt-3" (click)="$event.stopPropagation()" (click)="deleteMessage(message.id)"><i class="fa fa-trash"></i> Delete</button>
                 </tr>
         </table>
     </div>

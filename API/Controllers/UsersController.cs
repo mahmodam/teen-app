@@ -50,9 +50,7 @@ namespace API.Controllers
         [Authorize]
         public async Task<ActionResult<PageList<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
-            // var users = await _userRepository.GetUsersAsync();
-            // var usersToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
-
+           
             var user = await _userRepository.GetUserByUserNameAsync(User.GetUsername());
             userParams.CurrentUsername = user.UserName;
 
@@ -67,9 +65,7 @@ namespace API.Controllers
         [HttpGet("{username}", Name = "GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-        //    var user = await _userRepository.GetUserByUserNameAsync(username);
-        //    var userToReturn = _mapper.Map<MemberDto>(user);
-
+       
         var userToReturn = await _userRepository.GetMemberAsync(username);
 
            return Ok(userToReturn);

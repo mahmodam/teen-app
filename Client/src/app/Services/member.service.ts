@@ -1,6 +1,6 @@
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of, take, tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Member } from '../models/member';
 import { PaginationResult } from '../models/pagination';
@@ -21,9 +21,6 @@ export class MemberService {
 
 
   getMembers(userParams: UserParams):Observable<PaginationResult<Member[]>>{
-    // if(this.members.length){
-    //   return of(this.members);
-    // }
 
     const cacheKey = Object.values(userParams).join('-');
     const resule = this.memberCache.get(cacheKey);
@@ -68,8 +65,7 @@ export class MemberService {
     if(foundMember){
       return of(foundMember);
     }
-
-    // רק אם נכנס דרך ה url
+    
     return this.http.get<Member>(`${this.baseUrl}users/${username}`)
   }
 

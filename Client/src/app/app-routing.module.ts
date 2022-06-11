@@ -7,10 +7,8 @@ import { AuthGuard } from './guards/auth-guard.service';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 import { HomeComponent } from './home/home.component';
 import { LearnMoreComponent } from './home/learn-more/learn-more.component';
-import { ListsComponent } from './lists/lists.component';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { MessagesComponent } from './messages/messages.component';
-import { QuestionsComponent } from './questions/questions.component';
 
 const routes: Routes = [
   {
@@ -27,9 +25,7 @@ const routes: Routes = [
         loadChildren: () => import('./modules/members.module').then(m => m.MembersModule)
       },
       {path: 'member/edit', component: MemberEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
-      {path:'lists',component:ListsComponent},
       {path:'messages',component: MessagesComponent},
-      {path:'questions',component: QuestionsComponent},
     ]
   },
   {path:'errors', component:TestErrorsComponent},

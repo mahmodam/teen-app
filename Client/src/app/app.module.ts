@@ -10,9 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { QuestionsComponent } from './questions/questions.component';
 import { CoreModule } from './modules/core.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
@@ -33,9 +31,7 @@ import { LearnMoreComponent } from './home/learn-more/learn-more.component';
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    ListsComponent,
     MessagesComponent,
-    QuestionsComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,

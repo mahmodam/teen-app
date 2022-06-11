@@ -29,17 +29,14 @@ namespace API.Helpers
         public int PageSize { get; set; }
         public int TotalCount { get; set; }
 
-        // פונקציה static כי אנחנו לא צריכים ליצור אובייקט מחדש כדי להשתמש בה
-        // אפשר להגיע אליה דרך המחלקה
+      
         public static async Task<PageList<T>> CreateAsync(
-            // מה שמקבל מהלקוח
             IQueryable<T> source, // the source data
             int pageNumber,
             int pageSize
         ){
             var count = await source.CountAsync();
 
-            // מספר העמוד שנבחר מהלקוח
             var item = await source
             .Skip((pageNumber -1) * pageSize)
             .Take(pageSize)

@@ -15,7 +15,6 @@ namespace API.Extensions
          public static IServiceCollection AddIdentityServices(this IServiceCollection services , IConfiguration config)
         {
             // הבטחת שרת
-            // הבטחת שרת
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options => {
                 options.TokenValidationParameters = new TokenValidationParameters{

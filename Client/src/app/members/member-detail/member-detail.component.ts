@@ -30,7 +30,6 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   subscribtion: Subscription;
 
   ngOnInit(): void {
-    //this.loadMember();
     this.route.data.subscribe(data => {
       this.member = data['member'];
       this.galleryImages = this.getImages();
@@ -56,14 +55,6 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
     this.subscribtion.unsubscribe();
   }
 
-  // loadMember(){
-  //   const username = this.route.snapshot.paramMap.get('username') as string;
-
-  //   this.memberService.getMember(username).subscribe(member => {
-  //     this.member = member;
-  //     this.galleryImages = this.getImages();
-  //   });
-  // }
 
   getImages(): NgxGalleryImage[]{
     const imgUrls = [];
