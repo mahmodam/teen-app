@@ -15,7 +15,7 @@ import { MessagesService } from '../Services/messages.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit{
 
   member!:Member;
   model: any = {};
@@ -33,12 +33,7 @@ export class NavComponent implements OnInit {
     this.currentUser$ = accountService.currentUser$;
    }
 
-  ngOnInit(): void {
-    this.messagesService.getUnreadMessagesCount().subscribe(count => {
-      this.badge = count;
-    });
-  }
-
+  ngOnInit(): void {}
   
 
   logout(){
@@ -53,6 +48,9 @@ export class NavComponent implements OnInit {
       this.router.navigateByUrl('/members');
      // console.log(response);
       this.toastr.success('Hello ' + this.model.username + '!', 'Welcome to Teen-App');
+      this.messagesService.getUnreadMessagesCount().subscribe(count => {
+        this.badge = count;
+      });
      });
   }
 
@@ -68,6 +66,10 @@ export class NavComponent implements OnInit {
       form.reset();
     
     });
+  }
+
+  hiddenbadge(){
+    this.badge = 0;
   }
 
 }

@@ -37,7 +37,7 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
 
     this.subscribtion = this.route.queryParams.subscribe((params: Params) => {
       const selectedTab = params['tab'];
-      this.selectTab(selectedTab);
+      this.selectTab(selectedTab ? selectedTab : 0);
     })
 
     this.galleryOptions = [
@@ -84,7 +84,7 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
       }
 
 
-      selectTab(tabId: number){
+      selectTab(tabId: number) {
         this.memberTabs.tabs[tabId].active = true;
       }
  
