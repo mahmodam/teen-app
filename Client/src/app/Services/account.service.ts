@@ -30,8 +30,7 @@ baseUrl = environment.apiUrl;
     );
   }
 
-  // פונקצית helper
-  //לשימוש רק אם יש צורך
+  
   setCurrentUser(user: User){
     this.currentUserSource$.next(user);
   }

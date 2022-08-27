@@ -40,23 +40,6 @@ export class MemberService {
     }))
   }
 
-  // private getPaginationResult<T>(url: string, params: HttpParams): Observable<PaginationResult<T>> {
-  // const paginationResult :PaginationResult<T> = new PaginationResult<T>();
-
-  //   return this.http.get<T>(url, {
-  //     observe: 'response',
-  //     params
-  //   }).pipe(
-  //     map((response: HttpResponse<T>) => {
-  //       paginationResult.result = response.body as T;
-  //       if (response.headers.get('Pagination') != null) {
-  //         paginationResult.pagination = JSON.parse(response.headers.get('Pagination') || '');
-  //       }
-  //       return paginationResult;
-  //     })
-  //   );
-  // }
-
   getMember(username : string) : Observable<Member>{
 
     const members = [... this.memberCache.values()];
@@ -86,14 +69,14 @@ export class MemberService {
     return this.http.delete(`${this.baseUrl}users/delete-photo/${photoId}`);
   }
 
-  // private getPaginationParams({pageNumber, pageSize} : UserParams){
-  //   let params = new HttpParams();
-  //   if(pageNumber != null && pageSize != null){
-  //     params = params.append('pageNumber', pageNumber.toString());
-  //     params = params.append('pageSize', pageSize.toString());
-  //   }
-  //   return params;
-  // }
+  deleteMember(username : string){
+    return this.http.delete(`${this.baseUrl}users/delete-user/${username}`).pipe(
+      tap(() => {
+        const index = this.members.findIndex(m => m.username === username);
+        this.members.splice(index, 1);
+      })
+    )
+  }
 
   
 

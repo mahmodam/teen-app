@@ -1,4 +1,7 @@
 
+
+
+
 <div class="row" *ngIf="member">
     <div class="col-4">
         <h1 class="text-center mt-3" id="h1">{{member.knownAs | titlecase}} Profile</h1>
@@ -11,6 +14,9 @@
             </p>
         </div>
     </div>
+
+    
+
     <div class="col-4">
         <div class="card ml-3 mb-3"><img class="card-img img-thumbnail" src="{{member.photoUrl || './assets/user.png'}}"
                 alt="{{member.knownAs}}">
@@ -33,9 +39,11 @@
                 </div>
                 <div class="card-footer">
                     <button form="editForm" [disabled]="editForm.pristine" class="btn btn-outline-success btn-block" type="submit">Save Changes</button>
+                    <button form="deleteForm" (click)="deleteMember()" type="button" class="btn btn-outline-danger btn-block" >Delete Account</button> 
                 </div>
             </div>
         </div>
+        
     </div>
     <div class="col-8">
         <tabset class="member-tabset">
@@ -63,5 +71,4 @@
         </tabset>
     </div>
 </div>
-
 

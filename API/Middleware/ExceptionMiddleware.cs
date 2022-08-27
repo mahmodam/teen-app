@@ -48,6 +48,11 @@ namespace API.Middleware
                 await context.Response.WriteAsync(json);
             }
         }
+
+        private static void ClearHttpContext(HttpContext context)
+        {
+            context.Request.Body.Position = 0;
+        }
        
     }
 }

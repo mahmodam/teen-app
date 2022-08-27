@@ -33,7 +33,6 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register( RegisterDto registerDto)
         {
-            // אלגוריתם לסיסמה ליצירת האש מתוך הסיסמה
             using var hmac = new HMACSHA512();
             if(await UserExists(registerDto.Username)) return BadRequest("Username alredy exists");
 
@@ -57,10 +56,8 @@ namespace API.Controllers
         {
             var user = await this._context.Users.Include(x => x.Photos).SingleOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
             if(user == null) return Unauthorized("invalid username");
-            // שחזור הסיסמה של הלקוח באמצעות Passwordsalt
             using var hmac = new HMACSHA512(user.PasswordSalt);
             var ComputedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(loginDto.Password));
-            // בדיקה אם הם שווים
             for (int i = 0; i < ComputedHash.Length; i++)
             {
                 if(ComputedHash[i] != user.PasswordHash[i]) return Unauthorized("invalid password");
@@ -77,7 +74,6 @@ namespace API.Controllers
 
 
 
-        // פונקציה לוודות שאין כפלויות של משתמשים
          private async Task<bool> UserExists(string username)
         {
             return await _context.Users.AnyAsync(x => x.UserName.ToLower() == username.ToLower());

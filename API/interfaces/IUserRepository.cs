@@ -13,6 +13,8 @@ namespace API.interfaces
     {
        void Update(AppUser user);
 
+       void DeleteUser(AppUser user);
+
        Task<bool> SaveAllAsync();
 
        Task<IEnumerable<AppUser>> GetUsersAsync();

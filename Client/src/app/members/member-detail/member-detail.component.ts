@@ -87,6 +87,8 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
       selectTab(tabId: number) {
         this.memberTabs.tabs[tabId].active = true;
       }
+
+      
  
   
 
